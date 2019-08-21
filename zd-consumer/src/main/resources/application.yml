@@ -1,0 +1,21 @@
+server:
+   port: 8888
+
+spring:
+   dubbo:
+      application:
+          name: comsumer
+      registry:
+          address: zookeeper://127.0.0.1:2181
+      scan: com.java.zd.consumer.controller
+   #数据库的连接
+   datasource:
+     driver-class-name: com.mysql.jdbc.Driver
+     url: jdbc:mysql:///k9503?useSSL=false
+     username: root
+     password: Root
+     hikari:
+       maximum-pool-size: 30
+       minimum-idle: 10
+   mvc:
+     static-path-pattern: /static/**
